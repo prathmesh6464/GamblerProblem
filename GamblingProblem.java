@@ -12,8 +12,8 @@ public class GamblingProblem
 		
 		//VARIABLES
 		int stake = 100;
-		int totalAmountAfter20DaysWon = 0;
-		int totalAmountAfter20DaysLost = 0;
+		int totalAmountAfterMonthWon = 0;
+		int totalAmountAfterMonthLost = 0;
 		int day=1;
 		int dayWon = 0;
 		int dayLost = 0;
@@ -31,7 +31,7 @@ public class GamblingProblem
 					if(RESIGN_WON == stake) 
 					{
 						dayWon++;
-						totalAmountAfter20DaysWon += RESIGN_WON_LOST_INCREMENT;
+						totalAmountAfterMonthWon += RESIGN_WON_LOST_INCREMENT;
 						break;						
 					}					
 				}
@@ -41,7 +41,7 @@ public class GamblingProblem
 					if(RESING_LOST == stake) 
 					{
 						dayLost++;	
-						totalAmountAfter20DaysLost += RESIGN_WON_LOST_INCREMENT ;
+						totalAmountAfterMonthLost += RESIGN_WON_LOST_INCREMENT ;
 						break;
 					}					
 				}				
@@ -49,7 +49,7 @@ public class GamblingProblem
 			stake = 100;
 			day += 1;
 		}
-		System.out.println("Total Day Won  : "+dayWon+" And Won Money After Won  : "+totalAmountAfter20DaysWon);
-		System.out.println("Total Day Lost : "+dayLost+" And Lost Money After Lost  : "+totalAmountAfter20DaysLost);
+		System.out.println("Total Day Won  : "+dayWon+" And Won Money After Won  : "+totalAmountAfterMonthWon);
+		System.out.println("Total Day Lost : "+dayLost+" And Lost Money After Lost  : "+totalAmountAfterMonthLost);
 	}
 }
