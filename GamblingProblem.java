@@ -9,7 +9,7 @@ public class GamblingProblem
 		int RESIGN_WON_LOST_INCREMENT = 50;
 		int MONTH = 30;
 
-		
+
 		//VARIABLES
 		int stake = 100;
 		int totalAmountAfterMonthWon = 0;
@@ -17,6 +17,7 @@ public class GamblingProblem
 		int day=1;
 		int dayWon = 0;
 		int dayLost = 0;
+		
 
 		//METHOD OF WIN OR LOOSE USING RANDOM FUNCTION
 		for(int iter=0;iter<MONTH;iter++)
@@ -49,7 +50,7 @@ public class GamblingProblem
 			stake = 100;
 			day += 1;
 		}
-		System.out.println("Total Day Won  : "+dayWon+" And Won Money After Won  : "+totalAmountAfterMonthWon);
-		System.out.println("Total Day Lost : "+dayLost+" And Lost Money After Lost  : "+totalAmountAfterMonthLost);
+		System.out.println("Total Day Won  : "+dayWon+" And Won Money        : "+totalAmountAfterMonthWon);
+		System.out.println("Total Day Lost : "+dayLost+" And Lost Money Lost  : "+totalAmountAfterMonthLost);
 	}
 }
