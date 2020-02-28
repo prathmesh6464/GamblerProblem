@@ -1,4 +1,6 @@
 import java.util.Random;
+import java.util.HashMap;
+import java.util.Map;
 public class GamblingProblem 
 {
 	public static void main(String[] args)
@@ -14,7 +16,7 @@ public class GamblingProblem
 		int stake = 100;
 		int totalAmountAfterMonthWon = 0;
 		int totalAmountAfterMonthLost = 0;
-		int day=1;
+		int day = 1;
 		int dayWon = 0;
 		int dayLost = 0;
 		
@@ -33,6 +35,7 @@ public class GamblingProblem
 					{
 						dayWon++;
 						totalAmountAfterMonthWon += RESIGN_WON_LOST_INCREMENT;
+						
 						break;						
 					}					
 				}
