@@ -8,8 +8,8 @@ public class GamblingProblem
 		int RESING_LOST = 50; 
 		int RESIGN_WON_LOST_INCREMENT = 50;
 		int MONTH = 30;
-
-
+		
+	
 		//VARIABLES
 		int stake = 100;
 		int totalAmountAfterMonthWon = 0;
@@ -17,10 +17,14 @@ public class GamblingProblem
 		int day = 1;
 		int dayWon = 0;
 		int dayLost = 0;
+		int minDay=0;
+		int maxDay=0;
+		int maxValue=0;
+		int minValue=50;
 		
-
+		
 		//METHOD OF WIN OR LOOSE USING RANDOM FUNCTION
-		for(int iter=0;iter<MONTH;iter++)
+		for(int iter=0; iter<MONTH; iter++)
 		{
 			while(true)
 			{ 
@@ -33,7 +37,11 @@ public class GamblingProblem
 					{
 						dayWon++;
 						totalAmountAfterMonthWon += RESIGN_WON_LOST_INCREMENT;
-						
+						if(maxValue < totalAmountAfterMonthWon)
+						{
+							maxValue = totalAmountAfterMonthWon;
+							maxDay = day;
+						}
 						break;						
 					}					
 				}
@@ -42,8 +50,10 @@ public class GamblingProblem
 					stake--;
 					if(RESING_LOST == stake) 
 					{
-						dayLost++;	
-						totalAmountAfterMonthLost += RESIGN_WON_LOST_INCREMENT ;
+						dayLost++;
+						totalAmountAfterMonthLost += RESIGN_WON_LOST_INCREMENT;
+						minValue = totalAmountAfterMonthLost;
+						minDay = day;
 						break;
 					}					
 				}				
@@ -53,5 +63,7 @@ public class GamblingProblem
 		}
 		System.out.println("Total Day Won  : "+dayWon+" And Won Money  : "+totalAmountAfterMonthWon);
 		System.out.println("Total Day Lost : "+dayLost+" And Lost Money : "+totalAmountAfterMonthLost);
+		System.out.println("Lukiest Day    : "+maxDay+" And Amount Won : "+maxValue);
+		System.out.println("Unlukiest Day    : "+minDay+" And Amount lost: "+minValue);
 	}
 }
