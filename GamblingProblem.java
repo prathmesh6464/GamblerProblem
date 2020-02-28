@@ -1,22 +1,25 @@
-import java.util.*;
+import java.util.Random;
 public class GamblingProblem 
 {
 	public static void main(String[] args)
 	{
 		//CONSTANT VARIABLE
-		int BET = 1;
 		int RESIGN_WON = 150;
-		int RESIGN_LOST = 50;
+		int RESING_LOST = 50; 
+		int RESIGN_WON_LOST_INCREMENT = 50;
+		int MONTH = 30;
 
-
+		
 		//VARIABLES
 		int stake = 100;
 		int totalAmountAfter20DaysWon = 0;
 		int totalAmountAfter20DaysLost = 0;
-
+		int day=1;
+		int dayWon = 0;
+		int dayLost = 0;
 
 		//METHOD OF WIN OR LOOSE USING RANDOM FUNCTION
-		for(int iter=0;iter<20;iter++)
+		for(int iter=0;iter<MONTH;iter++)
 		{
 			while(true)
 			{ 
@@ -27,26 +30,26 @@ public class GamblingProblem
 					stake++;
 					if(RESIGN_WON == stake) 
 					{
-						totalAmountAfter20DaysWon += stake;
-						System.out.println("Total Amount Win  : "+totalAmountAfter20DaysWon);
+						dayWon++;
+						totalAmountAfter20DaysWon += RESIGN_WON_LOST_INCREMENT;
 						break;						
 					}					
 				}
 				else
 				{
 					stake--;
-					if(RESIGN_LOST == stake) 
+					if(RESING_LOST == stake) 
 					{
-						totalAmountAfter20DaysLost += stake;
-						System.out.println("Total Amount Lost : "+totalAmountAfter20DaysLost);
+						dayLost++;	
+						totalAmountAfter20DaysLost += RESIGN_WON_LOST_INCREMENT ;
 						break;
 					}					
 				}				
 			}
 			stake = 100;
+			day += 1;
 		}
-		//SHOWING ACCOUNT BALANCE AFTER 20 DAYS
-		System.out.println("Acount Balance After 20 Days(Won)       : "+totalAmountAfter20DaysWon);
-		System.out.println("Loose Count Balance After 20 Days(Lost) : "+totalAmountAfter20DaysLost);
+		System.out.println("Total Day Won  : "+dayWon+" And Won Money After Won  : "+totalAmountAfter20DaysWon);
+		System.out.println("Total Day Lost : "+dayLost+" And Lost Money After Lost  : "+totalAmountAfter20DaysLost);
 	}
 }
