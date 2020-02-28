@@ -50,7 +50,7 @@ public class GamblingProblem
 			stake = 100;
 			day += 1;
 		}
-		System.out.println("Total Day Won  : "+dayWon+" And Won Money        : "+totalAmountAfterMonthWon);
-		System.out.println("Total Day Lost : "+dayLost+" And Lost Money Lost  : "+totalAmountAfterMonthLost);
+		System.out.println("Total Day Won  : "+dayWon+" And Won Money  : "+totalAmountAfterMonthWon);
+		System.out.println("Total Day Lost : "+dayLost+" And Lost Money : "+totalAmountAfterMonthLost);
 	}
 }
