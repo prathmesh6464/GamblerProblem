@@ -5,28 +5,28 @@ public class GamblingProblem
 	{
 		//CONSTANT VARIABLE
 		int BET = 1;
-		
-		
+
+
 		//VARIABLES
 		int stake = 100;
 		int winCount = 0;
 		int looseCount = 0;
-		
-		
+
+
 		//METHOD OF WIN OR LOOSE USING RANDOM FUNCTION
 		Random randomValue = new Random();
 		int turnResult = randomValue.nextInt(2);
 		if(turnResult == 1) 
 		{
 			System.out.println("Head");
-		    winCount++;
-		    stake++;
-		    System.out.println("Stake : "+stake);
+			winCount++;
+			stake++;
+			System.out.println("Stake : "+stake);
 		}
 		else
 		{
 			System.out.println("Tail");
-		  	looseCount++;
+			looseCount++;
 			stake--;
 			System.out.println("Stake : "+stake);
 		}
