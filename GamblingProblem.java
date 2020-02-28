@@ -61,6 +61,9 @@ public class GamblingProblem
 				stake = 100;
 				day += 1;
 			}
+			
+			
+			//DISPLAYING TOTAL WON,LOST,LUKIEST AND UNLUKIEST DAY
 			System.out.println("Total Day Won  : "+dayWon+" And Won Money  : "+totalAmountAfterMonthWon);
 			System.out.println("Total Day Lost : "+dayLost+" And Lost Money : "+totalAmountAfterMonthLost+"\n");
 			System.out.println("Lukiest Day    : "+maxDay+" And Amount Won : "+maxValue);
@@ -71,10 +74,11 @@ public class GamblingProblem
 			System.out.println("You Want To Play Again For Next Month Yes Or No : ");
 			Scanner sc = new Scanner(System.in);
 			String decision = sc.nextLine();
-			
-			//CHEKING USER DECISION
 			boolean result = decision.equals("Yes");
 			boolean result2 = decision.equals("yes");
+			
+			
+			//CHEKING USER DECISION
 			if(result || result2)
 			{
 				System.out.println("Started Again");
