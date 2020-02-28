@@ -3,7 +3,7 @@ public class GamblingProblem
 {
 	public static void main(String[] args)
 	{
-		//CONSTANT VARIABLES
+		//CONSTANT VARIABLE
 		int BET = 1;
 		
 		
