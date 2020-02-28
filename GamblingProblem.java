@@ -25,10 +25,10 @@ public class GamblingProblem
 		}
 		else
 		{
-			System.out.println("Tail");
-		  	looseCount++;
-			stake--;
-			System.out.println("Stake : "+stake);
+				System.out.println("Tail");
+		  		looseCount++;
+				stake--;
+				System.out.println("Stake : "+stake);
 		}
 		System.out.println("Win Count : "+winCount);
 		System.out.println("Loose Count : "+looseCount);
