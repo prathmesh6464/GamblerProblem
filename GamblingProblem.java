@@ -18,17 +18,17 @@ public class GamblingProblem
 		int turnResult = randomValue.nextInt(2);
 		if(turnResult == 1) 
 		{
-		    	System.out.println("Head");
-		    	winCount++;
-		    	stake++;
-		    	System.out.println("Stake : "+stake);
+			System.out.println("Head");
+		    winCount++;
+		    stake++;
+		    System.out.println("Stake : "+stake);
 		}
 		else
 		{
-				System.out.println("Tail");
-		  		looseCount++;
-				stake--;
-				System.out.println("Stake : "+stake);
+			System.out.println("Tail");
+		  	looseCount++;
+			stake--;
+			System.out.println("Stake : "+stake);
 		}
 		System.out.println("Win Count : "+winCount);
 		System.out.println("Loose Count : "+looseCount);
