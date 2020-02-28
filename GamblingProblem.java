@@ -73,8 +73,8 @@ public class GamblingProblem
 			String decision = sc.nextLine();
 			
 			//CHEKING USER DECISION
-			boolean result=decision.equals("Yes");
-			boolean result2=decision.equals("yes");
+			boolean result = decision.equals("Yes");
+			boolean result2 = decision.equals("yes");
 			if(result || result2)
 			{
 				System.out.println("Started Again");
