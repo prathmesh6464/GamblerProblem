@@ -11,22 +11,25 @@ public class GamblingProblem
 		int MONTH = 30;
 
 
-		//VARIABLES
-		int stake = 100;
-		int totalAmountAfterMonthWon = 0;
-		int totalAmountAfterMonthLost = 0;
-		int day = 1;
-		int dayWon = 0;
-		int dayLost = 0;
-		int minDay=0;
-		int maxDay=0;
-		int maxValue=0;
-		int minValue=50;
-
-
 		//METHOD OF WIN OR LOOSE USING RANDOM FUNCTION
 		while(true)
 		{
+			int stake = 100;
+			int totalAmountAfterMonthWon = 0;
+			int totalAmountAfterMonthLost = 0;
+			int day = 1;
+			int dayWon = 0;
+			int dayLost = 0;
+			int minWonDay = 0;
+			int maxWonDay = 0;
+			int maxWonValue = 0;
+			int minWonValue = 50;
+			int sumWonLost = 0;
+			int sumLost = 0;
+			int minValue = 0;
+			int maxValue = 0;
+
+
 			for(int iter=0; iter<MONTH; iter++)
 			{
 				while(true)
@@ -40,8 +43,15 @@ public class GamblingProblem
 						{
 							dayWon++;
 							totalAmountAfterMonthWon += RESIGN_WON_LOST_INCREMENT;
-							maxValue = totalAmountAfterMonthWon;
-							maxDay = day;
+							sumWonLost += RESIGN_WON_LOST_INCREMENT;
+							maxWonValue = totalAmountAfterMonthWon;
+							System.out.println("sum Won  : "+sumWonLost);
+							if(maxValue < sumWonLost)
+							{
+								maxWonDay = day;
+								maxValue = sumWonLost;
+								System.out.println("sum Won  : "+maxWonDay+" maximum value : "+maxValue);
+							}
 							break;						
 						}					
 					}
@@ -52,8 +62,15 @@ public class GamblingProblem
 						{
 							dayLost++;
 							totalAmountAfterMonthLost += RESIGN_WON_LOST_INCREMENT;
-							minValue = totalAmountAfterMonthLost;
-							minDay = day;
+							sumWonLost -= RESIGN_WON_LOST_INCREMENT;
+							minWonValue = totalAmountAfterMonthLost;
+							System.out.println("sum Lost : "+sumWonLost);
+							if(minValue > sumWonLost)
+							{
+								minWonDay = day;
+								minValue=sumWonLost;
+								System.out.println("sum Lost  : "+minWonDay+" minimum value : "+minValue);
+							}
 							break;
 						}					
 					}				
@@ -61,23 +78,23 @@ public class GamblingProblem
 				stake = 100;
 				day += 1;
 			}
-			
-			
+
+
 			//DISPLAYING TOTAL WON,LOST,LUKIEST AND UNLUKIEST DAY
 			System.out.println("Total Day Won  : "+dayWon+" And Won Money  : "+totalAmountAfterMonthWon);
 			System.out.println("Total Day Lost : "+dayLost+" And Lost Money : "+totalAmountAfterMonthLost+"\n");
-			System.out.println("Lukiest Day    : "+maxDay+" And Amount Won : "+maxValue);
-			System.out.println("Unukiest Day   : "+minDay+" And Amount lost: "+minValue);
-			
-			
+			System.out.println("Lukiest Day    : "+maxWonDay+" And Amount Won : "+maxValue);
+			System.out.println("Unukiest Day   : "+minWonDay+" And Amount lost: "+minValue);
+
+
 			//ASKING PERMISION TO USER THAT USER WANT TO PLAY OR NOT 
 			System.out.println("You Want To Play Again For Next Month Yes Or No : ");
 			Scanner sc = new Scanner(System.in);
 			String decision = sc.nextLine();
 			boolean result = decision.equals("Yes");
 			boolean result2 = decision.equals("yes");
-			
-			
+
+
 			//CHEKING USER DECISION
 			if(result || result2)
 			{
@@ -88,7 +105,7 @@ public class GamblingProblem
 				System.out.println("Thank You");
 				break;
 			}
-			
+
 		}
 	}
 }
